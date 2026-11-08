@@ -1,0 +1,83 @@
+{
+  "name": "📺MissAV",
+  "api": "https://missav.media",
+  "type": 2,
+  "searchable": true,
+  "header": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Referer": "https://missav.media/"
+  },
+  "categories": [
+    {
+      "name": "最近更新",
+      "url": "/dm539/cn/new?page={{page}}"
+    },
+    {
+      "name": "今日热门",
+      "url": "/dm301/cn/today-hot?page={{page}}"
+    },
+    {
+      "name": "本周热门",
+      "url": "/dm170/cn/weekly-hot?page={{page}}"
+    },
+    {
+      "name": "本月热门",
+      "url": "/dm273/cn/monthly-hot?page={{page}}"
+    },
+    {
+      "name": "中文字幕",
+      "url": "/dm278/cn/chinese-subtitle?page={{page}}"
+    },
+    {
+      "name": "新作上市",
+      "url": "/dm635/cn/release?page={{page}}"
+    },
+    {
+      "name": "无码流出",
+      "url": "/dm817/cn/uncensored-leak?page={{page}}"
+    },
+    {
+      "name": "FC2",
+      "url": "/dm597/cn/fc2?page={{page}}"
+    },
+    {
+      "name": "HEYZO",
+      "url": "/dm2208642/cn/heyzo?page={{page}}"
+    },
+    {
+      "name": "东京热",
+      "url": "/dm42/cn/tokyohot?page={{page}}"
+    },
+    {
+      "name": "一本道",
+      "url": "/dm5199603/cn/1pondo?page={{page}}"
+    }
+  ],
+  "list": {
+    "list": ".thumbnail a[href*='/cn/']",
+    "name": "img.0@alt",
+    "coverUrl": "img.0@data-src||img.0@src",
+    "detailUrl": "href",
+    "tips": "img.0@alt"
+  },
+  "search": {
+    "url": "/cn/search/{{key}}",
+    "list": ".thumbnail a[href*='/cn/']",
+    "name": "img.0@alt",
+    "coverUrl": "img.0@data-src||img.0@src",
+    "detailUrl": "href"
+  },
+  "detail": {
+    "meta": "title@text"
+  },
+  "play": {
+    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<9) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'自适应',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'},{name:'480P',url:base+'/720x480/video.m3u8'}]); } getPlay(__result);",
+    "name": "$.name",
+    "url": "$.url"
+  },
+  "toc": {
+    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<9) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'自适应',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'},{name:'480P',url:base+'/720x480/video.m3u8'}]); } getPlay(__result);",
+    "name": "$.name",
+    "url": "$.url"
+  }
+}
