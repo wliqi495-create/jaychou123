@@ -5,7 +5,8 @@
   "searchable": true,
   "header": {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Referer": "https://missav.media/"
+    "Referer": "https://missav.media/",
+    "Accept-Language": "zh-CN,zh;q=0.9"
   },
   "categories": [
     {
@@ -55,28 +56,27 @@
   ],
   "list": {
     "list": ".thumbnail a[href*='/cn/']",
-    "name": "img.0@alt",
-    "coverUrl": "img.0@data-src||img.0@src",
-    "detailUrl": "href",
-    "tips": "img.0@alt"
+    "name": "img@alt",
+    "coverUrl": "img@data-src",
+    "detailUrl": "href"
   },
   "search": {
     "url": "/cn/search/{{key}}",
     "list": ".thumbnail a[href*='/cn/']",
-    "name": "img.0@alt",
-    "coverUrl": "img.0@data-src||img.0@src",
+    "name": "img@alt",
+    "coverUrl": "img@data-src",
     "detailUrl": "href"
   },
   "detail": {
     "meta": "title@text"
   },
-  "play": {
-    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<9) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'自适应',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'},{name:'480P',url:base+'/720x480/video.m3u8'}]); } getPlay(__result);",
+  "toc": {
+    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m){ m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]{20,})/i); } if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<8) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; if(host.indexOf('store')<0 && s[6].indexOf('store')>=0) host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'正片',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'}]); } getPlay(__result);",
     "name": "$.name",
     "url": "$.url"
   },
-  "toc": {
-    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<9) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'自适应',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'},{name:'480P',url:base+'/720x480/video.m3u8'}]); } getPlay(__result);",
+  "play": {
+    "list": "body@js:function getPlay(html){ var m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]+?)\\|video/i); if(!m){ m=html.match(/m3u8\\|([a-zA-Z0-9|.\\-]{20,})/i); } if(!m) return '[]'; var s=('m3u8|'+m[1]+'|video').split('|'); if(s.length<8) return '[]'; var uuid=s[5]+'-'+s[4]+'-'+s[3]+'-'+s[2]+'-'+s[1]; var host=s[7]+'.'+s[6]; if(host.indexOf('store')<0 && s[6].indexOf('store')>=0) host=s[7]+'.'+s[6]; var base='https://'+host+'/'+uuid; return JSON.stringify([{name:'正片',url:base+'/playlist.m3u8'},{name:'720P',url:base+'/1280x720/video.m3u8'}]); } getPlay(__result);",
     "name": "$.name",
     "url": "$.url"
   }
