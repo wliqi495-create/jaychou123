@@ -269,69 +269,7 @@
       "url": "$.url"
     }
   },
-  {
-    "name": "📺荐片",
-    "api": "https://api.ztcgi.com",
-    "type": 2,
-    "searchable": true,
-    "removeReferer": false,
-    "header": {
-      "User-Agent": "Mozilla/5.0 (Linux; Android 9; V2196A Build/PQ3A.190705.08211809; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.114 Mobile Safari/537.36;webank/h5face;webank/1.0;netType:NETWORK_WIFI;appVersion:416;packageName:com.jp3.xg3",
-      "Accept": "application/json, text/plain, */*",
-      "Accept-Language": "zh-CN,zh;q=0.9",
-      "Referer": "https://api.ztcgi.com/"
-    },
-    "categories": [
-      {
-        "name": "电影",
-        "url": "/api/crumb/list?fcate_pid=1&category_id=&area=&year=&type=&sort=&page={{page}}",
-        "url2": "/api/crumb/list?fcate_pid=1&category_id=&area=&year=&type=&sort=&page=1"
-      },
-      {
-        "name": "电视剧",
-        "url": "/api/crumb/list?fcate_pid=2&category_id=&area=&year=&type=&sort=&page={{page}}",
-        "url2": "/api/crumb/list?fcate_pid=2&category_id=&area=&year=&type=&sort=&page=1"
-      },
-      {
-        "name": "动漫",
-        "url": "/api/crumb/list?fcate_pid=3&category_id=&area=&year=&type=&sort=&page={{page}}",
-        "url2": "/api/crumb/list?fcate_pid=3&category_id=&area=&year=&type=&sort=&page=1"
-      },
-      {
-        "name": "综艺",
-        "url": "/api/crumb/list?fcate_pid=4&category_id=&area=&year=&type=&sort=&page={{page}}",
-        "url2": "/api/crumb/list?fcate_pid=4&category_id=&area=&year=&type=&sort=&page=1"
-      }
-    ],
-    "list": {
-      "list": "body@js:function parse(html){try{var j=JSON.parse(html);var arr=(j&&j.data)?j.data:[];if(!Array.isArray(arr))return'[]';var r=[];for(var i=0;i<arr.length;i++){var it=arr[i];var id=it.id||it.jump_id||'';if(!id)continue;var pic=it.path||it.thumbnail||'';if(pic&&pic.indexOf('http')!==0){if(pic.indexOf('//')===0)pic='https:'+pic;else pic='https://static.ztcuc.com'+pic;}r.push({vod_id:String(id),vod_name:it.title||'',vod_pic:pic,vod_remarks:it.mask||it.score||'',vod_id_path:'/api/video/detailv2?id='+id});}return JSON.stringify(r);}catch(e){return'[]';}}parse(__result);",
-      "name": "$.vod_name",
-      "tips": "$.vod_remarks",
-      "coverUrl": "$.vod_pic",
-      "detailUrl": "$.vod_id_path"
-    },
-    "search": {
-      "url": "/api/v2/search/videoV2?key={{key}}&category_id=88&page=1&pageSize=20",
-      "list": "body@js:function parse(html){try{var j=JSON.parse(html);var arr=(j&&j.data)?j.data:[];if(!Array.isArray(arr))return'[]';var r=[];for(var i=0;i<arr.length;i++){var it=arr[i];var id=it.id||it.jump_id||'';if(!id)continue;var pic=it.path||it.thumbnail||'';if(pic&&pic.indexOf('http')!==0){if(pic.indexOf('//')===0)pic='https:'+pic;else pic='https://static.ztcuc.com'+pic;}r.push({vod_id:String(id),vod_name:it.title||'',vod_pic:pic,vod_remarks:it.mask||it.score||'',vod_id_path:'/api/video/detailv2?id='+id});}return JSON.stringify(r);}catch(e){return'[]';}}parse(__result);",
-      "name": "$.vod_name",
-      "tips": "$.vod_remarks",
-      "coverUrl": "$.vod_pic",
-      "detailUrl": "$.vod_id_path"
-    },
-    "detail": {
-      "meta": "body@js:function parse(html){try{var j=JSON.parse(html);var d=(j&&j.data)?j.data:null;if(!d)return'';var t=d.title||'';var y=d.year||'';var a=d.area||'';var desc=d.description||'';return t+' '+y+' '+a+'\\n'+desc;}catch(e){return'';}}parse(__result);"
-    },
-    "play": {
-      "list": "body@js:function getPlay(html){try{var j=JSON.parse(html);var d=(j&&j.data)?j.data:null;if(!d)return'[]';var r=[],s={};(d.source_list_source||[]).forEach(function(src,si){var gname=(src.name||('线路'+(si+1))).replace(/常规线路/g,'边下边播');(src.source_list||[]).forEach(function(ep){var u=ep.url||'';if(!u||s[u])return;s[u]=1;var n=(ep.source_name||'播放');if((d.source_list_source||[]).length>1)n=gname+'-'+n;r.push({name:n,url:u});});});return r.length?JSON.stringify(r):'[]';}catch(e){return'[]';}}getPlay(__result);",
-      "name": "$.name",
-      "url": "$.url"
-    },
-    "toc": {
-      "list": "body@js:function getPlay(html){try{var j=JSON.parse(html);var d=(j&&j.data)?j.data:null;if(!d)return'[]';var r=[],s={};(d.source_list_source||[]).forEach(function(src,si){var gname=(src.name||('线路'+(si+1))).replace(/常规线路/g,'边下边播');(src.source_list||[]).forEach(function(ep){var u=ep.url||'';if(!u||s[u])return;s[u]=1;var n=(ep.source_name||'播放');if((d.source_list_source||[]).length>1)n=gname+'-'+n;r.push({name:n,url:u});});});return r.length?JSON.stringify(r):'[]';}catch(e){return'[]';}}getPlay(__result);",
-      "name": "$.name",
-      "url": "$.url"
-    }
-  },
+  
   {
     "name": "📺冠建影视",
     "api": "https://www.pandaguard.com",
@@ -424,7 +362,7 @@
     "name": "📺骚火",
     "api": "https://saohuo.tv",
     "type": 2,
-    "searchable": true,
+    "searchable": false,
     "header": {
       "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
       "Accept-Language": "zh-CN,zh;q=0.9",
@@ -529,26 +467,19 @@
         "url": "/list/19-{{page}}.html"
       }
     ],
-    "list": {
-      "list": ".v_list .v_img, .v_list li, .list_item",
-      "name": "a@title||a img@alt||a@text",
-      "tips": ".v_note@text||.v_title span@text",
-      "coverUrl": "img@data-original||img@src",
-      "detailUrl": "a@href"
-    },
     "search": {
       "url": "/s----------.html?wd={{key}}",
-      "list": ".v_list .v_img, .v_list li",
-      "name": "a@title||a@text",
-      "tips": ".v_note@text",
-      "coverUrl": "img@data-original||img@src",
-      "detailUrl": "a@href"
+      "list": ".v_list .v_img",
+      "name": "a.0@title",
+      "tips": ".v_note@.text",
+      "coverUrl": "img.0@data-original",
+      "detailUrl": "a.0@href"
     },
     "detail": {
-      "meta": ".v_info_box > p@text||.v_info@text"
+      "meta": ".v_info_box > p@text"
     },
     "play": {
-      "list": "li.current a, .play_list a, .from_list a",
+      "list": "li.current a",
       "reverse": true,
       "name": "text",
       "url": "href"
@@ -794,12 +725,11 @@
     }
   },
   {
-    "name": "奇优",
+    "name": "📺奇优",
     "type": 2,
-    "api": "http://www.wdbay.com",
+    "api": "https://www.qiyou07.com",
     "header": {
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
-      "Referer": "http://www.wdbay.com/"
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"
     },
     "removeReferer": true,
     "injectJs": {
@@ -823,28 +753,21 @@
         "name": "综艺"
       }
     ],
-    "list": {
-      "list": ".stui-vodlist__thumb",
-      "name": "title||alt",
-      "detailUrl": "href",
-      "coverUrl": "data-original||src",
-      "tips": ".pic-text@text"
-    },
     "detail": {
       "meta": ".stui-content__detail .data@html"
     },
     "search": {
       "list": ".stui-vodlist__thumb",
-      "name": "title||alt",
+      "name": "title",
       "detailUrl": "href",
-      "coverUrl": "data-original||src",
+      "coverUrl": "data-original",
       "tips": ".pic-text@text",
       "method": "POST",
       "post": "searchword={{key}}",
       "url": "/search.php"
     },
     "play": {
-      "list": ".stui-content__playlist a",
+      "list": ".stui-content__playlist.0@a",
       "name": "text",
       "url": "href"
     },
@@ -852,12 +775,11 @@
     "discoverable": true
   },
   {
-    "name": "奇优2",
+    "name": "📺奇优2",
     "type": 2,
     "api": "http://www.wdbay.com",
     "header": {
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
-      "Referer": "http://www.wdbay.com/"
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"
     },
     "removeReferer": true,
     "injectJs": {
@@ -881,28 +803,21 @@
         "name": "综艺"
       }
     ],
-    "list": {
-      "list": ".stui-vodlist__thumb",
-      "name": "title||alt",
-      "detailUrl": "href",
-      "coverUrl": "data-original||src",
-      "tips": ".pic-text@text"
-    },
     "detail": {
       "meta": ".stui-content__detail .data@html"
     },
     "search": {
       "list": ".stui-vodlist__thumb",
-      "name": "title||alt",
+      "name": "title",
       "detailUrl": "href",
-      "coverUrl": "data-original||src",
+      "coverUrl": "data-original",
       "tips": ".pic-text@text",
       "method": "POST",
       "post": "searchword={{key}}",
       "url": "/search.php"
     },
     "play": {
-      "list": ".stui-content__playlist a",
+      "list": ".stui-content__playlist.0@a",
       "name": "text",
       "url": "href"
     },
@@ -977,10 +892,6 @@
     "api": "https://www.hellorlgzf7sn.com",
     "type": 2,
     "searchable": true,
-    "header": {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-      "Referer": "https://www.hellorlgzf7sn.com/"
-    },
     "categories": [
       {
         "name": "电视剧",
@@ -2641,6 +2552,211 @@
       "list": "body@js:function getPlay(html){var r=[],s={},id='',m,j,files,i,f,name,url,fmt;\nm=html.match(/\\/details\\/([^\"'\\/\\s?#]+)/);if(m)id=m[1];\nif(!id){m=html.match(/og:url[^>]+content=\"[^\"]*\\/details\\/([^\"\\/]+)/);if(m)id=m[1];}\nif(!id){m=html.match(/identifier[\"\\s:=]+[\"']?([A-Za-z0-9_\\-\\.]+)/);if(m)id=m[1];}\nfunction add(n,u){if(!u||s[u])return;s[u]=1;r.push({name:n,url:u});}\nif(id){\ntry{var xhr=new XMLHttpRequest();xhr.open('GET','https://archive.org/metadata/'+id,false);\nxhr.setRequestHeader('Accept','application/json');xhr.send(null);\nif(xhr.status===200){j=JSON.parse(xhr.responseText);files=j.files||[];\nvar prefer=[];\nfor(i=0;i<files.length;i++){f=files[i];name=String(f.name||'');fmt=String(f.format||'').toLowerCase();\nif(/\\.mp4$/i.test(name)||/mpeg4|h\\.264|512kb/i.test(fmt))prefer.push(f);\nelse if(/\\.m3u8$/i.test(name))prefer.push(f);}\nprefer.sort(function(a,b){return (parseInt(b.size||0)||0)-(parseInt(a.size||0)||0);});\nfor(i=0;i<prefer.length&&i<8;i++){f=prefer[i];name=String(f.name||'');\nurl='https://archive.org/download/'+id+'/'+encodeURIComponent(name).replace(/%2F/g,'/');\nvar label=(f.format||name).toString().slice(0,40);add(label,url);}\n}}catch(e){}\n}\nif(!r.length&&id)add('详情页','https://archive.org/details/'+id);\nreturn r.length?JSON.stringify(r):'[]';}getPlay(__result);",
       "name": "$.name",
       "url": "$.url"
+    }
+  },
+  {
+    "name": "📺极速",
+    "api": "https://jisuzhuiju.com",
+    "type": 2,
+    "searchable": true,
+    "header": {
+      "Referer": "http://pic1.iqiyipic.com"
+    },
+    "categories": [
+      {
+        "name": "电视剧",
+        "url": "/filter?channel=1&type=&area=&year=&sort=hot&page={{page}}"
+      },
+      {
+        "name": "电影",
+        "url": "/filter?channel=2&type=&area=&year=&sort=hot&page={{page}}"
+      },
+      {
+        "name": "动漫",
+        "url": "/filter?channel=3&type=&area=&year=&sort=hot&page={{page}}"
+      },
+      {
+        "name": "短剧",
+        "url": "/filter?channel=5&type=&area=&year=&sort=hot&page={{page}}"
+      }
+    ],
+    "search": {
+      "url": "/search?keyword={{key}}",
+      "list": ".search-list .search-item",
+      "name": ".search-item-title.0@text",
+      "coverUrl": "img.0@src",
+      "detailUrl": ".search-item-title.0@href"
+    },
+    "list": {
+      "list": ".search-result-card .col-4 a",
+      "name": ".vod-title.0@text",
+      "tips": ".vod-badge.0@text",
+      "coverUrl": "img.0@src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": ".detail-meta-grid .meta-value@html"
+    },
+    "play": {
+      "list": "#source-0 a",
+      "name": "text",
+      "url": "href"
+    }
+  },
+  {
+    "name": "📺4K影视",
+    "api": "https://www.4kvm.tv",
+    "type": 2,
+    "searchable": true,
+    "categories": [
+      {
+        "name": "电影",
+        "url": "/filter?classify=1&page={{page}}"
+      },
+      {
+        "name": "电视剧",
+        "url": "/filter?classify=2&page={{page}}"
+      },
+      {
+        "name": "动漫",
+        "url": "/filter?classify=3&page={{page}}"
+      },
+      {
+        "name": "国产剧",
+        "url": "/filter?classify=2&tvclasses=20&page={{page}}"
+      },
+      {
+        "name": "美剧",
+        "url": "/filter?classify=2&tvclasses=21&page={{page}}"
+      },
+      {
+        "name": "韩剧",
+        "url": "/filter?classify=2&tvclasses=22&page={{page}}"
+      },
+      {
+        "name": "港台剧",
+        "url": "/filter?classify=2&tvclasses=27&page={{page}}"
+      },
+      {
+        "name": "国漫",
+        "url": "/filter?classify=2&tvclasses=26&page={{page}}"
+      }
+    ],
+    "search": {
+      "url": "/search?q={{key}}",
+      "list": ".group a.block",
+      "name": "h3.0@text",
+      "tips": ".bottom-0.0@text",
+      "coverUrl": ".object-cover.0@data-src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": ".grid-cols-3.text-xs .col-span-2@html"
+    },
+    "toc": {
+      "list": "a.episode-link",
+      "name": "span.0@text",
+      "url": "href"
+    }
+  },
+  {
+    "name": "📺Mxone",
+    "api": "https://www.ybwdy.com",
+    "type": 2,
+    "categories": [
+      {
+        "name": "电影",
+        "url": "/s/dianying--------{{page}}---.html"
+      },
+      {
+        "name": "电视剧",
+        "url": "/s/lianxuju--------{{page}}---.html"
+      },
+      {
+        "name": "国产剧",
+        "url": "/s/guochanju--------{{page}}---.html"
+      },
+      {
+        "name": "美剧",
+        "url": "/s/oumeiju--------{{page}}---.html"
+      },
+      {
+        "name": "动漫",
+        "url": "/s/dongman--------{{page}}---.html"
+      },
+      {
+        "name": "综艺",
+        "url": "/s/zongyi--------{{page}}---.html"
+      }
+    ],
+    "search": {
+      "url": "/sou/-------------.html?wd={{key}}",
+      "list": ".module-card-item",
+      "name": "a.1@text",
+      "tips": ".module-item-note@text",
+      "coverUrl": "img.0@data-original",
+      "detailUrl": "a.1@href"
+    },
+    "list": {
+      "list": "a.module-item",
+      "name": "title",
+      "tips": ".module-item-note@text",
+      "coverUrl": "img.0@data-original",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": ".module-info-item-content!0@html"
+    },
+    "play": {
+      "list": ".module-play-list-content.0@a",
+      "name": "text",
+      "url": "href"
+    }
+  },
+  {
+    "name": "📺FreeOK",
+    "api": "https://freeokk.pro",
+    "type": 2,
+    "categories": [
+      {
+        "name": "电影",
+        "url": "/show/1--------{{page}}---.html"
+      },
+      {
+        "name": "电视剧",
+        "url": "/show/2--------{{page}}---.html"
+      },
+      {
+        "name": "动漫",
+        "url": "/show/4--------{{page}}---.html"
+      },
+      {
+        "name": "综艺",
+        "url": "/show/3--------{{page}}---.html"
+      }
+    ],
+    "search": {
+      "url": "/sou/-------------.html?wd={{key}}",
+      "list": ".module-card-item",
+      "name": "a.1@text",
+      "tips": ".module-item-note@text",
+      "coverUrl": "img.0@data-original",
+      "detailUrl": "a.1@href"
+    },
+    "list": {
+      "list": "a.module-item",
+      "name": "title",
+      "tips": ".module-item-note@text",
+      "coverUrl": "img.0@data-original",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": ".module-info-item-content!0@html"
+    },
+    "play": {
+      "list": ".module-play-list-content.0@a",
+      "name": "text",
+      "url": "href"
     }
   }
 ]
