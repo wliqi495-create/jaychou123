@@ -201,7 +201,7 @@
   },
   {
     "name": "📺如意",
-    "api": "https://cj.rycjapi.com/api.php/provide/vod/from/rym3u8",
+    "api": "https://cj.rytvapi.com/api.php/provide/vod/from/rym3u8",
     "discoverable": false
   },
   {
@@ -269,8 +269,8 @@
     "api": "https://api.maoyanapi.top/api.php/provide/vod/"
   },
   {
-    "name": "📺豆瓣",
-    "api": "https://caiji.dbzy5.com/api.php/provide/vod/"
+    "name": "📺聚合",
+    "api": "http://150.109.94.44:1112/api.php/provide/vod/"
   },
   {
     "name": "📺大众",
@@ -309,9 +309,8 @@
     "api": "https://shayuzy5.com/api.php/provide/vod/"
   },
   {
-    "name": "📺荐片",
-    "api": "http://zhangqun1818.serv00.net/jianpian1.php",
-    "searchable": false
+    "name": "📺大地",
+    "api": "https://dadiapi.com/api.php/provide/vod/"
   },
   {
     "name": "📺奇艺",
