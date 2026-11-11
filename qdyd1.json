@@ -68,58 +68,7 @@
       "meta": "#info@html"
     }
   },
-  {
-    "name": "📺乌云影视",
-    "api": "https://wooyun.tv",
-    "type": 2,
-    "searchable": true,
-    "header": {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-      "Referer": "https://wooyun.tv/",
-      "Accept": "application/json"
-    },
-    "categories": [
-      {
-        "name": "最新1",
-        "url": "/movie/media/detail?mediaId={{page}}"
-      },
-      {
-        "name": "最新2",
-        "url": "/movie/media/detail?mediaId={{page}}"
-      },
-      {
-        "name": "最新3",
-        "url": "/movie/media/detail?mediaId={{page}}"
-      }
-    ],
-    "list": {
-      "list": "body@js:function getList(html){try{var j=JSON.parse(html);var d=j.data;if(!d||!d.id)return [];return [{title:d.title||d.originalTitle||'',pic:d.posterUrl||d.thumbUrl||'',url:String(d.id),tips:(d.mediaType&&d.mediaType.name)||String(d.releaseYear||'') }];}catch(e){return [];}} getList(__result);",
-      "name": "$.title",
-      "tips": "$.tips",
-      "coverUrl": "$.pic",
-      "detailUrl": "https://wooyun.tv/movie/media/detail?mediaId={{$.url}}"
-    },
-    "search": {
-      "url": "/movie/event/search/history?limit=10",
-      "list": "body@js:function getHot(html){try{var j=JSON.parse(html);var arr=(j.data&&j.data.hotSearch)||[];var out=[];for(var i=0;i<arr.length;i++){out.push({title:arr[i],pic:'',url:arr[i],tips:'热搜'});}return out;}catch(e){return [];}} getHot(__result);",
-      "name": "$.title",
-      "detailUrl": "$.url"
-    },
-    "detail": {
-      "meta": "$.data.title"
-    },
-    "play": {
-      "list": "body@js:function getPlay(html){try{var j=JSON.parse(html);var d=j.data;if(!d||!d.id)return [];var mid=d.id;return [{name:'拉取线路',url:'https://wooyun.tv/movie/media/video/group/list?mediaId='+mid}];}catch(e){return [];}} getPlay(__result);",
-      "name": "$.name",
-      "url": "$.url"
-    },
-    "toc": {
-      "list": "body@js:function getToc(html){try{var j=JSON.parse(html);var groups=j.data||[];var out=[];for(var g=0;g<groups.length;g++){var lang=groups[g].language||'线路';var pkgs=groups[g].packageList||[];for(var p=0;p<pkgs.length;p++){var vids=pkgs[p].videoList||[];for(var i=0;i<vids.length;i++){var v=vids[i];if(!v.playUrl)continue;var name=(v.remark||('第'+(v.epNo||1)+'集'));var url=v.playUrl;var m=url.match(/\\/(?:gen_overseas|hls_overseas)\\/(https?:.+)$/i);if(m)url=m[1];out.push({name:lang+' '+name,url:url});}}}return out;}catch(e){return [];}} getToc(__result);",
-      "name": "$.name",
-      "url": "$.url"
-    }
-  },
-  {
+   {
     "name": "📺独播库",
     "api": "https://www.dbku.tv",
     "type": 2,
@@ -303,6 +252,10 @@
   {
     "name": "📺天涯",
     "api": "https://tyyszyapi.com/api.php/provide/vod/"
+  },
+ {
+    "name": "📺吉吉",
+    "api": "http://caiji.jjzyapi.com/api.php/provide/vod/"
   },
   {
     "name": "📺鲨鱼2",
