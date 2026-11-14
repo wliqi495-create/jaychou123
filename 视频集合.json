@@ -2869,5 +2869,288 @@
       "name": "$.name",
       "url": "$.url"
     }
+  },
+  {
+    "name": "📺玉女百科",
+    "api": "https://cqglgo.ynbk6.mom",
+    "type": 2,
+    "searchable": true,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      "Referer": "https://cqglgo.ynbk6.mom/"
+    },
+    "categories": [
+      {
+        "name": "女神学生",
+        "url": "/vodtype/21.html",
+        "url2": "/vodtype/21-{{page}}.html"
+      },
+      {
+        "name": "美女直播",
+        "url": "/vodtype/22.html",
+        "url2": "/vodtype/22-{{page}}.html"
+      },
+      {
+        "name": "人妻系列",
+        "url": "/vodtype/23.html",
+        "url2": "/vodtype/23-{{page}}.html"
+      },
+      {
+        "name": "国产视频",
+        "url": "/vodtype/29.html",
+        "url2": "/vodtype/29-{{page}}.html"
+      },
+      {
+        "name": "无码视频",
+        "url": "/vodtype/30.html",
+        "url2": "/vodtype/30-{{page}}.html"
+      },
+      {
+        "name": "有码视频",
+        "url": "/vodtype/31.html",
+        "url2": "/vodtype/31-{{page}}.html"
+      },
+      {
+        "name": "中文字幕",
+        "url": "/vodtype/32.html",
+        "url2": "/vodtype/32-{{page}}.html"
+      },
+      {
+        "name": "日韩精品",
+        "url": "/vodtype/33.html",
+        "url2": "/vodtype/33-{{page}}.html"
+      },
+      {
+        "name": "欧美精品",
+        "url": "/vodtype/34.html",
+        "url2": "/vodtype/34-{{page}}.html"
+      },
+      {
+        "name": "动漫精品",
+        "url": "/vodtype/35.html",
+        "url2": "/vodtype/35-{{page}}.html"
+      }
+    ],
+    "list": {
+      "list": "a.videoBox",
+      "name": "h4.title@text||title",
+      "tips": ".videoBox-time@text",
+      "coverUrl": "img@data-src||img@src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:try{var m=__result.match(/const\\s+rawUrl\\s*=\\s*'([^']+)'/);m?JSON.stringify([{name:'正片',url:m[1]}]):'[]'}catch(e){'[]'}",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "search": {
+      "url": "/s/{{key}}.html",
+      "list": "a.videoBox",
+      "name": "h4.title@text||title",
+      "coverUrl": "img@data-src||img@src",
+      "detailUrl": "href"
+    },
+    "_note": "来自玉女百科.py",
+    "_js": "玉女百科.js"
+  },
+  {
+    "name": "📺精仙阁",
+    "api": "https://fuwtrv.jxg2.buzz",
+    "type": 2,
+    "searchable": true,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36",
+      "Referer": "https://fuwtrv.jxg2.buzz/"
+    },
+    "categories": [
+      {
+        "name": "熟母少妇",
+        "url": "/vodtype/20.html",
+        "url2": "/vodtype/20-{{page}}.html"
+      },
+      {
+        "name": "网红直播",
+        "url": "/vodtype/21.html",
+        "url2": "/vodtype/21-{{page}}.html"
+      },
+      {
+        "name": "自拍偷拍",
+        "url": "/vodtype/22.html",
+        "url2": "/vodtype/22-{{page}}.html"
+      },
+      {
+        "name": "高清国产",
+        "url": "/vodtype/24.html",
+        "url2": "/vodtype/24-{{page}}.html"
+      },
+      {
+        "name": "日本有码",
+        "url": "/vodtype/26.html",
+        "url2": "/vodtype/26-{{page}}.html"
+      },
+      {
+        "name": "日本无码",
+        "url": "/vodtype/27.html",
+        "url2": "/vodtype/27-{{page}}.html"
+      },
+      {
+        "name": "欧美情色",
+        "url": "/vodtype/28.html",
+        "url2": "/vodtype/28-{{page}}.html"
+      },
+      {
+        "name": "动漫卡通",
+        "url": "/vodtype/29.html",
+        "url2": "/vodtype/29-{{page}}.html"
+      }
+    ],
+    "list": {
+      "list": ".feature-post, a[href$='.html']",
+      "name": "a@title||.post-title@text",
+      "tips": ".btn-l@text",
+      "coverUrl": "img@data-original||img@src",
+      "detailUrl": "a@href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:try{var m=__result.match(/const\\s+rawUrl\\s*=\\s*'([^']+)'/);JSON.stringify(m?[{name:'正片',url:m[1]}]:[]);}catch(e){'[]'}",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "search": {
+      "url": "/s/index.html?wd={{key}}",
+      "list": ".feature-post",
+      "name": "a@title",
+      "coverUrl": "img@data-original",
+      "detailUrl": "a@href"
+    }
+  },
+  {
+    "name": "📺小处女",
+    "api": "https://ukqfm.myacetweay.buzz",
+    "type": 2,
+    "searchable": true,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Referer": "https://ukqfm.myacetweay.buzz/"
+    },
+    "categories": [
+      {
+        "name": "精品综合A",
+        "url": "/chu/vodtype/18.html",
+        "url2": "/chu/vodtype/18-{{page}}.html"
+      },
+      {
+        "name": "精品综合B",
+        "url": "/chu/vodtype/48.html"
+      },
+      {
+        "name": "成人动漫",
+        "url": "/chu/vodtype/160.html"
+      },
+      {
+        "name": "国产专区",
+        "url": "/chu/vodtype/1.html"
+      },
+      {
+        "name": "日本专区",
+        "url": "/chu/vodtype/2.html"
+      },
+      {
+        "name": "欧美专区",
+        "url": "/chu/vodtype/5.html"
+      },
+      {
+        "name": "传媒自拍",
+        "url": "/chu/vodtype/6.html"
+      }
+    ],
+    "list": {
+      "list": "li.item, li.col, div.item",
+      "name": "img@alt||title||a@text",
+      "tips": "small@text",
+      "coverUrl": "img@data-original||img@data-src||img@src",
+      "detailUrl": "a[href*='voddetail']@href||a@href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:try{var m=__result.match(/player_(?:data|aaaa)\\s*=\\s*(\\{[\\s\\S]*?\\})/);var u='';if(m){try{u=JSON.parse(m[1]).url||''}catch(e){var m2=m[1].match(/[\"']url[\"']\\s*:\\s*[\"']([^\"']+)/);u=m2?m2[1]:''}}u=String(u).replace(/\\\\\\//g,'/');if(!u){var m3=__result.match(/https?:\\\\/\\\\/[^\\\"'\\\\s]+\\\\.m3u8[^\\\"'\\\\s]*/);u=m3?m3[0]:'';JSON.stringify(u?[{name:'正片',url:u}]:[]);}catch(e){'[]'}",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "search": {
+      "url": "/vodsearch/{{key}}----------1---.html",
+      "list": "li.item, a[href*='voddetail']",
+      "name": "img@alt||title",
+      "coverUrl": "img@data-original||img@src",
+      "detailUrl": "href"
+    }
+  },
+  {
+    "name": "📺农民影视",
+    "api": "https://vip.wwgz.cn:5200",
+    "type": 2,
+    "searchable": true,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36",
+      "Referer": "https://vip.wwgz.cn:5200/"
+    },
+    "categories": [
+      {
+        "name": "国产剧",
+        "url": "/vod-list-id-12-pg-{{page}}.html"
+      },
+      {
+        "name": "动漫",
+        "url": "/vod-list-id-4-pg-{{page}}.html"
+      },
+      {
+        "name": "电影",
+        "url": "/vod-list-id-1-pg-{{page}}.html"
+      },
+      {
+        "name": "电视剧",
+        "url": "/vod-list-id-2-pg-{{page}}.html"
+      },
+      {
+        "name": "综艺",
+        "url": "/vod-list-id-3-pg-{{page}}.html"
+      },
+      {
+        "name": "短剧",
+        "url": "/vod-list-id-26-pg-{{page}}.html"
+      }
+    ],
+    "list": {
+      "list": ".globalPicList li",
+      "name": ".sTit.0@text",
+      "tips": ".sBottom.0@text",
+      "coverUrl": "img.0@data-echo||img.0@data-src||img.0@src",
+      "detailUrl": "a.0@href"
+    },
+    "search": {
+      "url": "/index.php?m=vod-search",
+      "list": "#data_list li",
+      "name": ".sTit.0@text",
+      "tips": ".sDes.0@text",
+      "coverUrl": ".lazyload.0@data-src",
+      "detailUrl": "a.0@href"
+    },
+    "detail": {
+      "meta": "h1.0@text"
+    },
+    "play": {
+      "list": "#leftTabBox .numList a",
+      "name": "text",
+      "url": "href"
+    },
+    "_note": "播放可能需二次解析 player js"
   }
 ]
