@@ -2220,6 +2220,153 @@
     }
   },
   {
+    "name": "📺咸鱼影视",
+    "api": "https://jxw888.cn",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      "Referer": "https://jxw888.cn/",
+      "Accept-Language": "zh-CN,zh;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "电影",
+        "url": "/list/1-{{page}}.html",
+        "url2": "/list/1.html"
+      },
+      {
+        "name": "连续剧",
+        "url": "/list/2-{{page}}.html",
+        "url2": "/list/2.html"
+      },
+      {
+        "name": "综艺",
+        "url": "/list/3-{{page}}.html",
+        "url2": "/list/3.html"
+      },
+      {
+        "name": "动漫",
+        "url": "/list/4-{{page}}.html",
+        "url2": "/list/4.html"
+      },
+      {
+        "name": "短剧",
+        "url": "/list/46-{{page}}.html",
+        "url2": "/list/46-1.html"
+      },
+      {
+        "name": "电影解说",
+        "url": "/list/35-{{page}}.html",
+        "url2": "/list/35.html"
+      },
+      {
+        "name": "体育",
+        "url": "/list/36-{{page}}.html",
+        "url2": "/list/36.html"
+      }
+    ],
+    "list": {
+      "list": "a.card, a[href*='/detail/']",
+      "name": ".nm@text||img@alt||@title||text",
+      "tips": "b@text||.rm@text",
+      "coverUrl": "img@src||img@data-src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/?wd={{key}}",
+      "list": "a.card, a[href*='/detail/']",
+      "name": ".nm@text||img@alt||@title||text",
+      "tips": "b@text||.rm@text",
+      "coverUrl": "img@src||img@data-src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||#vtitle@text||title@text"
+    },
+    "play": {
+      "list": ".eps a, a[href*='/detail/'][href*='-']",
+      "name": "b@text||text||title",
+      "url": "href"
+    },
+    "toc": {
+      "list": ".eps a, a[href*='/detail/'][href*='-']",
+      "name": "b@text||text||title",
+      "url": "href"
+    },
+    "_note": "集页含 m3u8；线路为 /detail/id-集-源.html"
+  },
+  {
+    "name": "📺饭搭子影视",
+    "api": "https://fdzys.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      "Referer": "https://fdzys.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "电影",
+        "url": "/movie?page={{page}}",
+        "url2": "/movie"
+      },
+      {
+        "name": "电视剧",
+        "url": "/tv?page={{page}}",
+        "url2": "/tv"
+      },
+      {
+        "name": "综艺",
+        "url": "/zongyi?page={{page}}",
+        "url2": "/zongyi"
+      },
+      {
+        "name": "动漫",
+        "url": "/dongman?page={{page}}",
+        "url2": "/dongman"
+      },
+      {
+        "name": "短剧",
+        "url": "/duanju?page={{page}}",
+        "url2": "/duanju"
+      }
+    ],
+    "list": {
+      "list": "a[href*='/movie/'], a[href*='/tv/'], a[href*='/dongman/'], a[href*='/zongyi/'], a[href*='/duanju/']",
+      "name": "@title||img@alt||text",
+      "tips": "",
+      "coverUrl": "img@src||img@data-src||@data-slide-bg",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/search?q={{key}}",
+      "list": "a[href*='/movie/'], a[href*='/tv/'], a[href*='/dongman/'], a[href*='/zongyi/']",
+      "name": "@title||img@alt||text",
+      "coverUrl": "img@src||img@data-src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},re=/href=\"(https?:\\/\\/fdzys\\.com\\/(?:movie|tv|dongman|zongyi|duanju)\\/[^\"]+)\"[^>]*>([^<]{1,30})</g,m;while((m=re.exec(html))){var n=m[2].trim();if(!n||n.length>20)continue;if(/集|正片|HD|高清|国语|中字|播放|\\d+/.test(n)){if(s[m[1]])continue;s[m[1]]=1;r.push({name:n,url:m[1]});}}if(!r.length){m=html.match(/player_aaaa\\s*=\\s*(\\{[\\s\\S]*?\\})/);if(m){try{var j=JSON.parse(m[1].replace(/'/g,'\"'));var u=(j.url||'').replace(/\\\\\\//g,'/');if(u)r.push({name:'正片',url:u});}catch(e){}}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "a[href*='?sid='], a[href*='/hd'], a[href*='zheng-pian']",
+      "name": "text||title",
+      "url": "href"
+    },
+    "_note": "class 被 hash，靠 href 路径匹配"
+  },
+  {
     "name": "📺4K影视",
     "api": "https://www.4kvm.tv",
     "type": 2,
