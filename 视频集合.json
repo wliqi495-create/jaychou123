@@ -429,6 +429,82 @@
     }
   },
   {
+    "name": "📺MissAV",
+    "api": "https://www.missav9.net",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://www.missav9.net/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "新作上市",
+        "url": "/cn/release?page={{page}}",
+        "url2": "/cn/release"
+      },
+      {
+        "name": "最近更新",
+        "url": "/cn/new?page={{page}}",
+        "url2": "/cn/new"
+      },
+      {
+        "name": "中文字幕",
+        "url": "/cn/chinese-subtitle?page={{page}}",
+        "url2": "/cn/chinese-subtitle"
+      },
+      {
+        "name": "无码影片",
+        "url": "/cn/fc2?page={{page}}",
+        "url2": "/cn/fc2"
+      },
+      {
+        "name": "今日热门",
+        "url": "/cn/today-hot?page={{page}}",
+        "url2": "/cn/today-hot"
+      },
+      {
+        "name": "本周热门",
+        "url": "/cn/weekly-hot?page={{page}}",
+        "url2": "/cn/weekly-hot"
+      },
+      {
+        "name": "本月热门",
+        "url": "/cn/monthly-hot?page={{page}}",
+        "url2": "/cn/monthly-hot"
+      }
+    ],
+    "list": {
+      "list": ".thumbnail a[href*='/cn/'], div.thumbnail.group a[href*='/cn/']",
+      "name": "img@alt||@title||text",
+      "tips": "",
+      "coverUrl": "img@src||img@data-src||img@data-original||video@poster",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/cn/search?q={{key}}",
+      "list": ".thumbnail a[href*='/cn/'], div.thumbnail.group a[href*='/cn/']",
+      "name": "img@alt||@title||text",
+      "coverUrl": "img@src||img@data-src||img@data-original||video@poster",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re=/https?:\\/\\/[^\"'\\s<>]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}re=/https?:\\/\\/surrit[^\"'\\s<>]+/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'Surrit',url:m[0]});}}re=/[\"'](https?:\\/\\/[^\"']+(?:m3u8|mp4)[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}var uuid=html.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);if(uuid && !r.length){r.push({name:'HLS',url:'https://surrit.com/'+uuid[0]+'/playlist.m3u8'});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re=/https?:\\/\\/[^\"'\\s<>]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}re=/https?:\\/\\/surrit[^\"'\\s<>]+/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'Surrit',url:m[0]});}}re=/[\"'](https?:\\/\\/[^\"']+(?:m3u8|mp4)[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}var uuid=html.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);if(uuid && !r.length){r.push({name:'HLS',url:'https://surrit.com/'+uuid[0]+'/playlist.m3u8'});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    }
+  },
+  {
     "name": "📺91短剧",
     "api": "https://91kankan.cc",
     "type": 2,
@@ -3548,5 +3624,238 @@
       "name": "播放",
       "url": "data-hls-src||data-fallback-src||src||data-src||href"
     }
+  },
+  {
+    "name": "📺172MixDJ",
+    "api": "https://www.172mixdj.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://www.172mixdj.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "中文MV舞曲",
+        "url": "/categories/zwmv",
+        "url2": "/categories/zwmv"
+      },
+      {
+        "name": "英文MV舞曲",
+        "url": "/categories/ywmv",
+        "url2": "/categories/ywmv"
+      },
+      {
+        "name": "中文MV串烧",
+        "url": "/categories/zwcs",
+        "url2": "/categories/zwcs"
+      },
+      {
+        "name": "英文MV串烧",
+        "url": "/categories/ywcs",
+        "url2": "/categories/ywcs"
+      },
+      {
+        "name": "VJ素材",
+        "url": "/categories/vjsuc",
+        "url2": "/categories/vjsuc"
+      },
+      {
+        "name": "最新上传",
+        "url": "/",
+        "url2": "/"
+      }
+    ],
+    "list": {
+      "list": ".post-main a[href*='/videos/']",
+      "name": "img@alt||@title||text",
+      "tips": ".video-length@text||.badge@text",
+      "coverUrl": "img@data-src||img@data-original||img@src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/searches?s={{key}}",
+      "list": ".post-main a[href*='/videos/']",
+      "name": "img@alt||@title||text",
+      "tips": ".video-length@text||.badge@text",
+      "coverUrl": "img@data-src||img@data-original||img@src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re=/https?:\\/\\/[^\"'\\s<>]+\\.mp4[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]] && m[0].indexOf('172mix')>-1){s[m[0]]=1;r.push({name:'正片',url:m[0]});}}if(!r.length){while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'正片',url:m[0]});}}}re=/url:\\s*[\"'](https?:\\/\\/[^\"']+\\.mp4[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re=/https?:\\/\\/[^\"'\\s<>]+\\.mp4[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]] && m[0].indexOf('172mix')>-1){s[m[0]]=1;r.push({name:'正片',url:m[0]});}}if(!r.length){while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'正片',url:m[0]});}}}re=/url:\\s*[\"'](https?:\\/\\/[^\"']+\\.mp4[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_note": "172Mix DJ舞曲MV视频网，来自172mixdj.js / 172mixdj.py",
+    "_js": "172mixdj.js"
+  },
+  {
+    "name": "📺DJ耶耶耶",
+    "api": "https://www.djyyy.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://www.djyyy.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "车载视频",
+        "url": "/shipin/chezai/x_{{page}}.html",
+        "url2": "/shipin/chezai/x_1.html"
+      },
+      {
+        "name": "夜店视频",
+        "url": "/sp/yedian/x_{{page}}.html",
+        "url2": "/sp/yedian/x_1.html"
+      },
+      {
+        "name": "热舞视频",
+        "url": "/sp/rewu/x_{{page}}.html",
+        "url2": "/sp/rewu/x_1.html"
+      },
+      {
+        "name": "舞曲视频",
+        "url": "/sp/wuqu/x_{{page}}.html",
+        "url2": "/sp/wuqu/x_1.html"
+      },
+      {
+        "name": "写真视频",
+        "url": "/sp/xiezhen/x_{{page}}.html",
+        "url2": "/sp/xiezhen/x_1.html"
+      },
+      {
+        "name": "打碟视频",
+        "url": "/sp/dadie/x_{{page}}.html",
+        "url2": "/sp/dadie/x_1.html"
+      },
+      {
+        "name": "车模视频",
+        "url": "/sp/chemo/x_{{page}}.html",
+        "url2": "/sp/chemo/x_1.html"
+      },
+      {
+        "name": "国外视频",
+        "url": "/sp/guowai/x_{{page}}.html",
+        "url2": "/sp/guowai/x_1.html"
+      },
+      {
+        "name": "串烧视频",
+        "url": "/sp/chuanshao/x_{{page}}.html",
+        "url2": "/sp/chuanshao/x_1.html"
+      },
+      {
+        "name": "最新视频",
+        "url": "/shipin/chezai/x_{{page}}.html",
+        "url2": "/shipin/"
+      }
+    ],
+    "list": {
+      "list": "a[href*='/shipin/'][href$='.html']",
+      "name": "img@alt||text",
+      "tips": "",
+      "coverUrl": "img@src||img@data-src||img@data-original",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/?keyword={{key}}",
+      "list": "a[href*='/shipin/'][href$='.html']",
+      "name": "img@alt||@title||text",
+      "coverUrl": "img@src||img@data-src||img@data-original",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re1=/https?:\\/\\/[a-zA-Z0-9.\\-\\/_%]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re1.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}var re2=/src=[\"'](https?:\\/\\/[^\"']+\\.m3u8[^\"']*)[\"']/gi;while((m=re2.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}if(!r.length){m=html.match(/https?:\\/\\/ct\\.haiqu\\.vip[^\"'\\s<>]+/i);if(m)r.push({name:'Haiqu',url:m[0]});}if(!r.length){m=html.match(/https?:\\/\\/[^\"'\\s<>]+\\.mp4[^\"'\\s<>]*/i);if(m)r.push({name:'正片',url:m[0]});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m;var re1=/https?:\\/\\/[a-zA-Z0-9.\\-\\/_%]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re1.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}var re2=/src=[\"'](https?:\\/\\/[^\"']+\\.m3u8[^\"']*)[\"']/gi;while((m=re2.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}if(!r.length){m=html.match(/https?:\\/\\/ct\\.haiqu\\.vip[^\"'\\s<>]+/i);if(m)r.push({name:'Haiqu',url:m[0]});}if(!r.length){m=html.match(/https?:\\/\\/[^\"'\\s<>]+\\.mp4[^\"'\\s<>]*/i);if(m)r.push({name:'正片',url:m[0]});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_note": "DJ耶耶耶网 视频舞曲，来自 djyyy.com"
+  },
+  {
+    "name": "📺234IPTV",
+    "api": "https://www.234iptv.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://www.234iptv.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "綜合",
+        "url": "/?tid=tv",
+        "url2": "/?tid=tv"
+      },
+      {
+        "name": "體育",
+        "url": "/?tid=ty",
+        "url2": "/?tid=ty"
+      },
+      {
+        "name": "央視",
+        "url": "/?tid=ys",
+        "url2": "/?tid=ys"
+      },
+      {
+        "name": "衛視",
+        "url": "/?tid=ws",
+        "url2": "/?tid=ws"
+      },
+      {
+        "name": "港澳台",
+        "url": "/?tid=gt",
+        "url2": "/?tid=gt"
+      }
+    ],
+    "list": {
+      "list": "a[href*='act=play']",
+      "name": "text||@title",
+      "tips": "",
+      "coverUrl": "",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/?act=home&wd={{key}}",
+      "list": "a[href*='act=play']",
+      "name": "text||@title",
+      "coverUrl": "",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/https?:\\/\\/[^\"'\\s<>]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}re=/[\"'](https?:\\/\\/[^\"']+\\.(?:m3u8|flv)[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}if(!r.length){m=html.match(/source\\s+src=[\"']([^\"']+)[\"']/i);if(m)r.push({name:'正片',url:m[1]});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/https?:\\/\\/[^\"'\\s<>]+\\.m3u8[^\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'线路'+(r.length+1),url:m[0]});}}re=/[\"'](https?:\\/\\/[^\"']+\\.(?:m3u8|flv)[^\"']*)[\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'播放',url:m[1]});}}if(!r.length){m=html.match(/source\\s+src=[\"']([^\"']+)[\"']/i);if(m)r.push({name:'正片',url:m[1]});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_note": "234IPTV 电视直播。流地址有混淆，纯JSON可能无法稳定取流，建议用原 IPTV直播.py (type 3)"
   }
 ]
