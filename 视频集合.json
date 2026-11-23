@@ -3549,6 +3549,114 @@
       "url": "data-hls-src||data-fallback-src||src||data-src||href"
     }
   },
+ {
+    "name": "📺XNXX",
+    "api": "https://www.xnxx.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://www.xnxx.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "今日精选",
+        "url": "/todays-selection/{{page}}",
+        "url2": "/todays-selection"
+      },
+      {
+        "name": "热门",
+        "url": "/hits/{{page}}",
+        "url2": "/hits"
+      },
+      {
+        "name": "本月最佳",
+        "url": "/best/{{page}}",
+        "url2": "/best"
+      },
+      {
+        "name": "中国",
+        "url": "/search/chinese/{{page}}",
+        "url2": "/search/chinese"
+      },
+      {
+        "name": "亚洲",
+        "url": "/search/asian/{{page}}",
+        "url2": "/search/asian"
+      },
+      {
+        "name": "日本",
+        "url": "/search/japanese/{{page}}",
+        "url2": "/search/japanese"
+      },
+      {
+        "name": "韩国",
+        "url": "/search/korean/{{page}}",
+        "url2": "/search/korean"
+      },
+      {
+        "name": "台湾",
+        "url": "/search/taiwan/{{page}}",
+        "url2": "/search/taiwan"
+      },
+      {
+        "name": "香港",
+        "url": "/search/hong_kong/{{page}}",
+        "url2": "/search/hong_kong"
+      },
+      {
+        "name": "素人",
+        "url": "/search/amateur/{{page}}",
+        "url2": "/search/amateur"
+      },
+      {
+        "name": "自拍",
+        "url": "/search/homemade/{{page}}",
+        "url2": "/search/homemade"
+      },
+      {
+        "name": "丝袜",
+        "url": "/search/stockings/{{page}}",
+        "url2": "/search/stockings"
+      },
+      {
+        "name": "按摩",
+        "url": "/search/massage/{{page}}",
+        "url2": "/search/massage"
+      }
+    ],
+    "list": {
+      "list": ".thumb-block, div[id^='video_']",
+      "name": "a[href*='/video-']@title||img@alt||a@text",
+      "tips": ".metadata@text||.duration@text",
+      "coverUrl": "img@data-src||img@src",
+      "detailUrl": "a[href*='/video-']@href"
+    },
+    "search": {
+      "url": "/search/{{key}}/{{page}}",
+      "list": ".thumb-block, div[id^='video_']",
+      "name": "a[href*='/video-']@title||img@alt",
+      "tips": ".metadata@text||.duration@text",
+      "coverUrl": "img@data-src||img@src",
+      "detailUrl": "a[href*='/video-']@href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "video, source, a[href*='.m3u8'], a[href*='.mp4']",
+      "name": "播放",
+      "url": "src||data-src||href"
+    },
+    "toc": {
+      "list": "video, source, a[href*='.m3u8'], a[href*='.mp4']",
+      "name": "播放",
+      "url": "src||data-src||href"
+    }
+  },
+
   {
     "name": "📺172MixDJ",
     "api": "https://www.172mixdj.com",
@@ -3690,6 +3798,92 @@
     },
     "_js": "aihuangdou.js",
     "_note": "黄桃短剧，对应 aihuangdou.js / spider.py"
-
+  },
+  {
+    "name": "📺91三级片",
+    "api": "https://91sanji.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+      "Referer": "https://91sanji.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "国产三级",
+        "url": "/category/chinese-sex-movies/{{page}}/",
+        "url2": "/category/chinese-sex-movies/"
+      },
+      {
+        "name": "香港三级",
+        "url": "/category/hong-kong-sex-movies/{{page}}/",
+        "url2": "/category/hong-kong-sex-movies/"
+      },
+      {
+        "name": "日本三级",
+        "url": "/category/japanese-sex-movies/{{page}}/",
+        "url2": "/category/japanese-sex-movies/"
+      },
+      {
+        "name": "韩国三级",
+        "url": "/category/korean-sex-movies/{{page}}/",
+        "url2": "/category/korean-sex-movies/"
+      },
+      {
+        "name": "欧美三级",
+        "url": "/category/western-sex-movies/{{page}}/",
+        "url2": "/category/western-sex-movies/"
+      },
+      {
+        "name": "东南亚三级",
+        "url": "/category/southeast-asian-sex-movies/{{page}}/",
+        "url2": "/category/southeast-asian-sex-movies/"
+      },
+      {
+        "name": "AI短剧",
+        "url": "/ai/drama/{{page}}/",
+        "url2": "/ai/drama/"
+      },
+      {
+        "name": "AI漫剧",
+        "url": "/ai/comic/{{page}}/",
+        "url2": "/ai/comic/"
+      },
+      {
+        "name": "最新上映",
+        "url": "/category/new/{{page}}/",
+        "url2": "/category/new/"
+      }
+    ],
+    "list": {
+      "list": "a[href*='/video/']",
+      "name": "img@alt||@title||text",
+      "tips": "",
+      "coverUrl": "img@src||img@data-src||img@data-original",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/search?keyword={{key}}",
+      "list": "a[href*='/video/']",
+      "name": "img@alt||@title||text",
+      "coverUrl": "img@src||img@data-src||img@data-original",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/<source[^>]+src=[\\\"'](https?:\\/\\/[^\\\"']+\\.m3u8[^\\\"']*)[\\\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'正片',url:m[1].replace(/&amp;/g,'&')});}}if(!r.length){re=/https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'正片',url:m[0].replace(/&amp;/g,'&')});}}}if(!r.length){m=html.match(/\\/video\\/(\\d+)/);if(m){r.push({name:'正片',url:'https://91sanji.com/videos/embed/'+m[1]});}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/<source[^>]+src=[\\\"'](https?:\\/\\/[^\\\"']+\\.m3u8[^\\\"']*)[\\\"']/gi;while((m=re.exec(html))){if(!s[m[1]]){s[m[1]]=1;r.push({name:'正片',url:m[1].replace(/&amp;/g,'&')});}}if(!r.length){re=/https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*/gi;while((m=re.exec(html))){if(!s[m[0]]){s[m[0]]=1;r.push({name:'正片',url:m[0].replace(/&amp;/g,'&')});}}}if(!r.length){m=html.match(/\\/video\\/(\\d+)/);if(m){r.push({name:'正片',url:'https://91sanji.com/videos/embed/'+m[1]});}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    }
   }
 ]
