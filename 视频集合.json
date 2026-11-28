@@ -1945,114 +1945,6 @@
     }
   },
   {
-    "name": "📺韩剧达达",
-    "api": "https://hanjudada.com",
-    "type": 2,
-    "searchable": true,
-    "removeReferer": false,
-    "header": {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-      "Referer": "https://hanjudada.com/",
-      "Accept-Language": "zh-CN,zh;q=0.9",
-      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-    },
-    "categories": [
-      {
-        "name": "最新",
-        "url": "/?page={{page}}",
-        "url2": "/"
-      },
-      {
-        "name": "2026韩剧",
-        "url": "/vodtype/122-{{page}}.html",
-        "url2": "/vodtype/122.html"
-      },
-      {
-        "name": "2025韩剧",
-        "url": "/vodtype/121-{{page}}.html",
-        "url2": "/vodtype/121.html"
-      },
-      {
-        "name": "2024韩剧",
-        "url": "/vodtype/120-{{page}}.html",
-        "url2": "/vodtype/120.html"
-      },
-      {
-        "name": "2023韩剧",
-        "url": "/vodtype/119-{{page}}.html",
-        "url2": "/vodtype/119.html"
-      },
-      {
-        "name": "2022韩剧",
-        "url": "/vodtype/118-{{page}}.html",
-        "url2": "/vodtype/118.html"
-      },
-      {
-        "name": "2021韩剧",
-        "url": "/vodtype/117-{{page}}.html",
-        "url2": "/vodtype/117.html"
-      },
-      {
-        "name": "2020韩剧",
-        "url": "/vodtype/116-{{page}}.html",
-        "url2": "/vodtype/116.html"
-      },
-      {
-        "name": "2019韩剧",
-        "url": "/vodtype/96-{{page}}.html",
-        "url2": "/vodtype/96.html"
-      },
-      {
-        "name": "2018韩剧",
-        "url": "/vodtype/97-{{page}}.html",
-        "url2": "/vodtype/97.html"
-      },
-      {
-        "name": "2017韩剧",
-        "url": "/vodtype/98-{{page}}.html",
-        "url2": "/vodtype/98.html"
-      },
-      {
-        "name": "2016韩剧",
-        "url": "/vodtype/99-{{page}}.html",
-        "url2": "/vodtype/99.html"
-      },
-      {
-        "name": "2015韩剧",
-        "url": "/vodtype/100-{{page}}.html",
-        "url2": "/vodtype/100.html"
-      }
-    ],
-    "list": {
-      "list": "a[href*='/hanju/']",
-      "name": "title||img@title||img@alt||h2 a@text||text",
-      "tips": "span@text||.channel-silder-info@text",
-      "coverUrl": "img@src||img@data-src||src",
-      "detailUrl": "href"
-    },
-    "search": {
-      "url": "/vodsearch/-------------.html?wd={{key}}",
-      "list": "a[href*='/hanju/']",
-      "name": "title||img@title||img@alt||text",
-      "tips": "span@text",
-      "coverUrl": "img@src||img@data-src",
-      "detailUrl": "href"
-    },
-    "detail": {
-      "meta": "h1@text||title@text"
-    },
-    "play": {
-      "list": "a[href*='/player/']",
-      "name": "text||title",
-      "url": "href"
-    },
-    "toc": {
-      "list": "body@js:function getPlay(html){var r=[],s={},m,u;\nfunction abs(u){if(!u)return'';u=String(u).replace(/&amp;/g,'&').replace(/\\\\\\//g,'/');if(u.indexOf('//')===0)return'https:'+u;if(u.indexOf('http')===0)return u;return'https://hanjudada.com'+(u.charAt(0)==='/'?u:'/'+u);}\nfunction dec(u){if(!u)return'';u=String(u);if(u.indexOf('%')>=0){try{u=decodeURIComponent(u);}catch(e){}}if(/^https?:\\/\\//i.test(u)===false&&/^[A-Za-z0-9+\\/=]+$/.test(u)&&u.length>20){try{u=decodeURIComponent(escape(atob(u)));}catch(e){try{u=atob(u);}catch(e2){}}}return u;}\nm=html.match(/player_aaaa\\s*=\\s*(\\{[\\s\\S]*?\\})\\s*;/);\nif(m){try{var j=JSON.parse(m[1]);u=dec(j.url||'');u=abs(u);if(u&&/m3u8|mp4/i.test(u))r.push({name:(j.from||'播放'),url:u});}catch(e){var mm=html.match(/\"url\"\\s*:\\s*\"((?:%[0-9A-Fa-f]{2})+)\"/);if(mm){u=abs(dec(mm[1]));if(u)r.push({name:'播放',url:u});}}}\nif(!r.length){var mm=html.match(/\"url\"\\s*:\\s*\"((?:%[0-9A-Fa-f]{2})[^\"]*)\"/);if(mm){u=abs(dec(mm[1]));if(u)r.push({name:'播放',url:u});}}\nvar re=/https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*/gi;while((m=re.exec(html))){u=m[0].replace(/&amp;/g,'&');if(s[u])continue;s[u]=1;r.push({name:'直链',url:u});}\nreturn r.length?JSON.stringify(r):'[]';}getPlay(__result);",
-      "name": "$.name",
-      "url": "$.url"
-    }
-  },
-  {
     "name": "📺威视TV",
     "api": "https://weishitv.xyz",
     "type": 2,
@@ -2168,55 +2060,6 @@
       "list": "body@js:function getPlay(html){var r=[],s={},m,u;\nfunction abs(u){if(!u)return'';u=String(u).replace(/&amp;/g,'&').replace(/\\\\\\//g,'/');if(u.indexOf('//')===0)return'https:'+u;if(u.indexOf('http')===0)return u;return'https://weishitv.xyz'+(u.charAt(0)==='/'?u:'/'+u);}\nfunction dec(u){if(!u)return'';u=String(u);if(u.indexOf('%')>=0){try{u=decodeURIComponent(u);}catch(e){}}if(/^https?:\\/\\//i.test(u)===false&&/^[A-Za-z0-9+\\/=]+$/.test(u)&&u.length>20){try{u=decodeURIComponent(escape(atob(u)));}catch(e){try{u=atob(u);}catch(e2){}}}return u;}\nm=html.match(/player_aaaa\\s*=\\s*(\\{[\\s\\S]*?\\})\\s*;/);\nif(m){try{var j=JSON.parse(m[1]);u=abs(dec(j.url||''));if(u&&/m3u8|mp4|\\.flv/i.test(u))r.push({name:j.from||'播放',url:u});}catch(e){var mm=html.match(/\"url\"\\s*:\\s*\"([^\"]+)\"/);if(mm){u=abs(dec(mm[1].replace(/\\\\\\//g,'/')));if(u)r.push({name:'播放',url:u});}}}\nif(!r.length){var mm=html.match(/\"url\"\\s*:\\s*\"([^\"]+\\.m3u8[^\"]*)\"/);if(mm)r.push({name:'播放',url:abs(mm[1].replace(/\\\\\\//g,'/'))});}\nvar re=/https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*/gi;while((m=re.exec(html))){u=m[0].replace(/&amp;/g,'&');if(s[u])continue;s[u]=1;r.push({name:'直链',url:u});}\nreturn r.length?JSON.stringify(r):'[]';}getPlay(__result);",
       "name": "$.name",
       "url": "$.url"
-    }
-  },
-  {
-    "name": "📺极速",
-    "api": "https://jisuzhuiju.com",
-    "type": 2,
-    "searchable": true,
-    "header": {
-      "Referer": "http://pic1.iqiyipic.com"
-    },
-    "categories": [
-      {
-        "name": "电视剧",
-        "url": "/filter?channel=1&type=&area=&year=&sort=hot&page={{page}}"
-      },
-      {
-        "name": "电影",
-        "url": "/filter?channel=2&type=&area=&year=&sort=hot&page={{page}}"
-      },
-      {
-        "name": "动漫",
-        "url": "/filter?channel=3&type=&area=&year=&sort=hot&page={{page}}"
-      },
-      {
-        "name": "短剧",
-        "url": "/filter?channel=5&type=&area=&year=&sort=hot&page={{page}}"
-      }
-    ],
-    "search": {
-      "url": "/search?keyword={{key}}",
-      "list": ".search-list .search-item",
-      "name": ".search-item-title.0@text",
-      "coverUrl": "img.0@src",
-      "detailUrl": ".search-item-title.0@href"
-    },
-    "list": {
-      "list": ".search-result-card .col-4 a",
-      "name": ".vod-title.0@text",
-      "tips": ".vod-badge.0@text",
-      "coverUrl": "img.0@src",
-      "detailUrl": "href"
-    },
-    "detail": {
-      "meta": ".detail-meta-grid .meta-value@html"
-    },
-    "play": {
-      "list": "#source-0 a",
-      "name": "text",
-      "url": "href"
     }
   },
   {
@@ -3549,7 +3392,7 @@
       "url": "data-hls-src||data-fallback-src||src||data-src||href"
     }
   },
- {
+  {
     "name": "📺XNXX",
     "api": "https://www.xnxx.com",
     "type": 2,
@@ -3656,7 +3499,6 @@
       "url": "src||data-src||href"
     }
   },
-
   {
     "name": "📺172MixDJ",
     "api": "https://www.172mixdj.com",
@@ -3799,7 +3641,7 @@
     "_js": "aihuangdou.js",
     "_note": "黄桃短剧，对应 aihuangdou.js / spider.py"
   },
-{
+  {
     "name": "📺6chua",
     "api": "https://www.6chua.com",
     "type": 2,
@@ -3812,25 +3654,101 @@
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     },
     "categories": [
-      { "name": "最新", "url": "/?page={{page}}", "url2": "/" },
-      { "name": "亚洲", "url": "/asian/?page={{page}}", "url2": "/asian/" },
-      { "name": "业余", "url": "/amateur/?page={{page}}", "url2": "/amateur/" },
-      { "name": "肛交", "url": "/anal/?page={{page}}", "url2": "/anal/" },
-      { "name": "大胸", "url": "/big-tits/?page={{page}}", "url2": "/big-tits/" },
-      { "name": "口交", "url": "/blowjob/?page={{page}}", "url2": "/blowjob/" },
-      { "name": "内射", "url": "/creampie/?page={{page}}", "url2": "/creampie/" },
-      { "name": "女同", "url": "/lesbian/?page={{page}}", "url2": "/lesbian/" },
-      { "name": "熟女", "url": "/milf/?page={{page}}", "url2": "/milf/" },
-      { "name": "自拍", "url": "/homemade/?page={{page}}", "url2": "/homemade/" },
-      { "name": "丝袜", "url": "/stockings/?page={{page}}", "url2": "/stockings/" },
-      { "name": "三人", "url": "/threesome/?page={{page}}", "url2": "/threesome/" },
-      { "name": "制服", "url": "/uniform/?page={{page}}", "url2": "/uniform/" },
-      { "name": "人妻", "url": "/wife/?page={{page}}", "url2": "/wife/" },
-      { "name": "硬核", "url": "/hardcore/?page={{page}}", "url2": "/hardcore/" },
-      { "name": "群交", "url": "/gangbang/?page={{page}}", "url2": "/gangbang/" },
-      { "name": "主观视角", "url": "/pov/?page={{page}}", "url2": "/pov/" },
-      { "name": "青少年", "url": "/teen/?page={{page}}", "url2": "/teen/" },
-      { "name": "摄像头", "url": "/webcam/?page={{page}}", "url2": "/webcam/" }
+      {
+        "name": "最新",
+        "url": "/?page={{page}}",
+        "url2": "/"
+      },
+      {
+        "name": "亚洲",
+        "url": "/asian/?page={{page}}",
+        "url2": "/asian/"
+      },
+      {
+        "name": "业余",
+        "url": "/amateur/?page={{page}}",
+        "url2": "/amateur/"
+      },
+      {
+        "name": "肛交",
+        "url": "/anal/?page={{page}}",
+        "url2": "/anal/"
+      },
+      {
+        "name": "大胸",
+        "url": "/big-tits/?page={{page}}",
+        "url2": "/big-tits/"
+      },
+      {
+        "name": "口交",
+        "url": "/blowjob/?page={{page}}",
+        "url2": "/blowjob/"
+      },
+      {
+        "name": "内射",
+        "url": "/creampie/?page={{page}}",
+        "url2": "/creampie/"
+      },
+      {
+        "name": "女同",
+        "url": "/lesbian/?page={{page}}",
+        "url2": "/lesbian/"
+      },
+      {
+        "name": "熟女",
+        "url": "/milf/?page={{page}}",
+        "url2": "/milf/"
+      },
+      {
+        "name": "自拍",
+        "url": "/homemade/?page={{page}}",
+        "url2": "/homemade/"
+      },
+      {
+        "name": "丝袜",
+        "url": "/stockings/?page={{page}}",
+        "url2": "/stockings/"
+      },
+      {
+        "name": "三人",
+        "url": "/threesome/?page={{page}}",
+        "url2": "/threesome/"
+      },
+      {
+        "name": "制服",
+        "url": "/uniform/?page={{page}}",
+        "url2": "/uniform/"
+      },
+      {
+        "name": "人妻",
+        "url": "/wife/?page={{page}}",
+        "url2": "/wife/"
+      },
+      {
+        "name": "硬核",
+        "url": "/hardcore/?page={{page}}",
+        "url2": "/hardcore/"
+      },
+      {
+        "name": "群交",
+        "url": "/gangbang/?page={{page}}",
+        "url2": "/gangbang/"
+      },
+      {
+        "name": "主观视角",
+        "url": "/pov/?page={{page}}",
+        "url2": "/pov/"
+      },
+      {
+        "name": "青少年",
+        "url": "/teen/?page={{page}}",
+        "url2": "/teen/"
+      },
+      {
+        "name": "摄像头",
+        "url": "/webcam/?page={{page}}",
+        "url2": "/webcam/"
+      }
     ],
     "list": {
       "list": "div[class=ugu], div.ugu",
@@ -3863,7 +3781,6 @@
     "_js": "6chua.js",
     "_note": "站点 class 无引号(class=ugu)。list 必须挂卡片容器；标题在 a 的兄弟节点 div.shv，不能把 list 设在 a 上"
   },
-
   {
     "name": "📺91三级片",
     "api": "https://91sanji.com",
@@ -3950,5 +3867,649 @@
       "name": "$.name",
       "url": "$.url"
     }
+  },
+  {
+    "name": "📺金牌影院",
+    "api": "https://www.lwdys.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Referer": "https://www.lwdys.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "喜剧片",
+        "url": "/vod/show/id/1/class/喜剧/page/{{page}}",
+        "url2": "/vod/show/id/1/class/喜剧"
+      },
+      {
+        "name": "动作片",
+        "url": "/vod/show/id/1/class/动作/page/{{page}}",
+        "url2": "/vod/show/id/1/class/动作"
+      },
+      {
+        "name": "爱情片",
+        "url": "/vod/show/id/1/class/爱情/page/{{page}}",
+        "url2": "/vod/show/id/1/class/爱情"
+      },
+      {
+        "name": "科幻片",
+        "url": "/vod/show/id/1/class/科幻/page/{{page}}",
+        "url2": "/vod/show/id/1/class/科幻"
+      },
+      {
+        "name": "悬疑片",
+        "url": "/vod/show/id/1/class/悬疑/page/{{page}}",
+        "url2": "/vod/show/id/1/class/悬疑"
+      },
+      {
+        "name": "奇幻片",
+        "url": "/vod/show/id/1/class/奇幻/page/{{page}}",
+        "url2": "/vod/show/id/1/class/奇幻"
+      },
+      {
+        "name": "恐怖片",
+        "url": "/vod/show/id/1/class/恐怖/page/{{page}}",
+        "url2": "/vod/show/id/1/class/恐怖"
+      },
+      {
+        "name": "剧情片",
+        "url": "/vod/show/id/1/class/剧情/page/{{page}}",
+        "url2": "/vod/show/id/1/class/剧情"
+      },
+      {
+        "name": "犯罪片",
+        "url": "/vod/show/id/1/class/犯罪/page/{{page}}",
+        "url2": "/vod/show/id/1/class/犯罪"
+      },
+      {
+        "name": "动画片",
+        "url": "/vod/show/id/1/class/动画/page/{{page}}",
+        "url2": "/vod/show/id/1/class/动画"
+      },
+      {
+        "name": "国产剧",
+        "url": "/vod/show/id/2/type/14/page/{{page}}",
+        "url2": "/vod/show/id/2/type/14"
+      },
+      {
+        "name": "欧美剧",
+        "url": "/vod/show/id/2/type/15/page/{{page}}",
+        "url2": "/vod/show/id/2/type/15"
+      },
+      {
+        "name": "港台剧",
+        "url": "/vod/show/id/2/type/16/page/{{page}}",
+        "url2": "/vod/show/id/2/type/16"
+      },
+      {
+        "name": "日韩剧",
+        "url": "/vod/show/id/2/type/62/page/{{page}}",
+        "url2": "/vod/show/id/2/type/62"
+      },
+      {
+        "name": "国产综艺",
+        "url": "/vod/show/id/3/type/69/page/{{page}}",
+        "url2": "/vod/show/id/3/type/69"
+      },
+      {
+        "name": "国产动漫",
+        "url": "/vod/show/id/4/type/75/page/{{page}}",
+        "url2": "/vod/show/id/4/type/75"
+      },
+      {
+        "name": "日韩动漫",
+        "url": "/vod/show/id/4/type/76/page/{{page}}",
+        "url2": "/vod/show/id/4/type/76"
+      },
+      {
+        "name": "喜剧短剧",
+        "url": "/vod/show/id/88/type/100/page/{{page}}",
+        "url2": "/vod/show/id/88/type/100"
+      },
+      {
+        "name": "古装短剧",
+        "url": "/vod/show/id/88/type/96/page/{{page}}",
+        "url2": "/vod/show/id/88/type/96"
+      },
+      {
+        "name": "爱情短剧",
+        "url": "/vod/show/id/88/type/95/page/{{page}}",
+        "url2": "/vod/show/id/88/type/95"
+      }
+    ],
+    "list": {
+      "list": "a[href*='/detail/'], .module-item, .module-poster-item, .vodlist a, .myui-vodlist__thumb",
+      "name": "title||img@alt||.title@text||text",
+      "tips": ".pic-text@text||.module-item-note@text||.text-right@text",
+      "coverUrl": "data-original||data-src||img@data-original||img@src||src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/vod/search/page/1/wd/{{key}}",
+      "list": "a[href*='/detail/'], .module-item, .module-poster-item",
+      "name": "title||img@alt||.title@text",
+      "tips": ".pic-text@text||.module-item-note@text",
+      "coverUrl": "data-original||data-src||img@src||src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||.module-info-introduction@html||.stui-content__detail@html||title@text"
+    },
+    "play": {
+      "list": "a[href*='/play/'], .module-play-list a, .module-play-list-link, .stui-content__playlist a",
+      "name": "text||title||span@text",
+      "url": "href"
+    },
+    "toc": {
+      "list": "a[href*='/play/'], .module-play-list a, .module-play-list-link",
+      "name": "text||title||span@text",
+      "url": "href"
+    },
+    "_js": "金牌影院.js",
+    "_note": "老僧酿酒/lwdys.com，签名 API 源，完整能力见 金牌影院.js（CatVod type3）"
+  },
+  {
+    "name": "📺多站合集",
+    "api": "https://www.homejavp.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Referer": "https://www.homejavp.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "HJAVP·最新",
+        "url": "https://www.homejavp.com/zh/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/"
+      },
+      {
+        "name": "HJAVP·亚洲",
+        "url": "https://www.homejavp.com/zh/asian/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/asian/"
+      },
+      {
+        "name": "HJAVP·业余",
+        "url": "https://www.homejavp.com/zh/amateur/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/amateur/"
+      },
+      {
+        "name": "HJAVP·熟女",
+        "url": "https://www.homejavp.com/zh/milf/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/milf/"
+      },
+      {
+        "name": "HJAVP·自拍",
+        "url": "https://www.homejavp.com/zh/homemade/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/homemade/"
+      },
+      {
+        "name": "HJAVP·丝袜",
+        "url": "https://www.homejavp.com/zh/stockings/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/stockings/"
+      },
+      {
+        "name": "HJAVP·口交",
+        "url": "https://www.homejavp.com/zh/blowjob/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/blowjob/"
+      },
+      {
+        "name": "HJAVP·内射",
+        "url": "https://www.homejavp.com/zh/creampie/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/creampie/"
+      },
+      {
+        "name": "HJAVP·女同",
+        "url": "https://www.homejavp.com/zh/lesbian/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/lesbian/"
+      },
+      {
+        "name": "HJAVP·三人",
+        "url": "https://www.homejavp.com/zh/threesome/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/threesome/"
+      },
+      {
+        "name": "HJAVP·制服",
+        "url": "https://www.homejavp.com/zh/uniform/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/uniform/"
+      },
+      {
+        "name": "HJAVP·人妻",
+        "url": "https://www.homejavp.com/zh/wife/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/wife/"
+      },
+      {
+        "name": "HJAVP·硬核",
+        "url": "https://www.homejavp.com/zh/hardcore/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/hardcore/"
+      },
+      {
+        "name": "HJAVP·群交",
+        "url": "https://www.homejavp.com/zh/gangbang/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/gangbang/"
+      },
+      {
+        "name": "HJAVP·大胸",
+        "url": "https://www.homejavp.com/zh/big-tits/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/big-tits/"
+      },
+      {
+        "name": "HJAVP·主观视角",
+        "url": "https://www.homejavp.com/zh/pov/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/pov/"
+      },
+      {
+        "name": "HJAVP·按摩",
+        "url": "https://www.homejavp.com/zh/massage/?page={{page}}",
+        "url2": "https://www.homejavp.com/zh/massage/"
+      },
+      {
+        "name": "JJJ·亚洲",
+        "url": "https://www.jiajianjian.com/zh/asian/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/asian/"
+      },
+      {
+        "name": "JJJ·熟女",
+        "url": "https://www.jiajianjian.com/zh/milf/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/milf/"
+      },
+      {
+        "name": "JJJ·自拍",
+        "url": "https://www.jiajianjian.com/zh/homemade/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/homemade/"
+      },
+      {
+        "name": "JJJ·丝袜",
+        "url": "https://www.jiajianjian.com/zh/stockings/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/stockings/"
+      },
+      {
+        "name": "JJJ·口交",
+        "url": "https://www.jiajianjian.com/zh/blowjob/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/blowjob/"
+      },
+      {
+        "name": "JJJ·三人",
+        "url": "https://www.jiajianjian.com/zh/threesome/?page={{page}}",
+        "url2": "https://www.jiajianjian.com/zh/threesome/"
+      },
+      {
+        "name": "MEGA·亚洲",
+        "url": "https://www.megapsite.com/zh/asian/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/asian/"
+      },
+      {
+        "name": "MEGA·熟女",
+        "url": "https://www.megapsite.com/zh/milf/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/milf/"
+      },
+      {
+        "name": "MEGA·素人",
+        "url": "https://www.megapsite.com/zh/amateur/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/amateur/"
+      },
+      {
+        "name": "MEGA·丝袜",
+        "url": "https://www.megapsite.com/zh/stockings/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/stockings/"
+      },
+      {
+        "name": "MEGA·口交",
+        "url": "https://www.megapsite.com/zh/blowjob/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/blowjob/"
+      },
+      {
+        "name": "MEGA·女优",
+        "url": "https://www.megapsite.com/zh/pornstar/?page={{page}}",
+        "url2": "https://www.megapsite.com/zh/pornstar/"
+      }
+    ],
+    "list": {
+      "list": "div[class=uos], div.uos, div[class=yc], div.yc, div[class=xjy], div.xjy",
+      "name": "div[class=bix]@text||div.bix@text||div[class=dci]@text||div.dci@text||div[class=jvb]@text||div.jvb@text||img@alt||@title",
+      "tips": "div@text||span@text",
+      "coverUrl": "img@src||img@data-src",
+      "detailUrl": "a@href"
+    },
+    "search": {
+      "url": "/zh/?k={{key}}&page={{page}}",
+      "list": "div[class=uos], div.uos",
+      "name": "div[class=bix]@text||div.bix@text||img@alt||@title",
+      "tips": "div@text",
+      "coverUrl": "img@src||img@data-src",
+      "detailUrl": "a@href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/<source[^>]+src=[\\\"'](https?:\\/\\/[^\\\"']+\\.m3u8[^\\\"']*)[\\\"']/gi;while((m=re.exec(html))){var u=m[1].replace(/&amp;/g,'&');if(!s[u]){s[u]=1;r.push({name:'正片',url:u});}}if(!r.length){re=/(https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*)/gi;while((m=re.exec(html))){var u=m[1].replace(/&amp;/g,'&');if(!s[u]){s[u]=1;r.push({name:'正片',url:u});}}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re;re=/<source[^>]+src=[\\\"'](https?:\\/\\/[^\\\"']+\\.m3u8[^\\\"']*)[\\\"']/gi;while((m=re.exec(html))){var u=m[1].replace(/&amp;/g,'&');if(!s[u]){s[u]=1;r.push({name:'正片',url:u});}}if(!r.length){re=/(https?:\\/\\/[^\\\"'\\s<>]+\\.m3u8[^\\\"'\\s<>]*)/gi;while((m=re.exec(html))){var u=m[1].replace(/&amp;/g,'&');if(!s[u]){s[u]=1;r.push({name:'正片',url:u});}}}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_js": "多站合集.js",
+    "_note": "已去掉6chua，改用 HJAVP/JJJ/MEGA 中文版。newasiantube 当前403不可用。分类为绝对URL跨站；完整五站请用多站合集.js"
+  },
+  {
+    "name": "📺汤头条",
+    "api": "https://cyb.ttt5.best",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Referer": "https://cyb.ttt5.best/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "国产自拍",
+        "url": "/vodtype/20-{{page}}.html",
+        "url2": "/vodtype/20-1.html"
+      },
+      {
+        "name": "制服丝袜",
+        "url": "/vodtype/21-{{page}}.html",
+        "url2": "/vodtype/21-1.html"
+      },
+      {
+        "name": "强奸乱伦",
+        "url": "/vodtype/22-{{page}}.html",
+        "url2": "/vodtype/22-1.html"
+      },
+      {
+        "name": "教师学生",
+        "url": "/vodtype/23-{{page}}.html",
+        "url2": "/vodtype/23-1.html"
+      },
+      {
+        "name": "素人系列",
+        "url": "/vodtype/24-{{page}}.html",
+        "url2": "/vodtype/24-1.html"
+      },
+      {
+        "name": "人妻熟女",
+        "url": "/vodtype/25-{{page}}.html",
+        "url2": "/vodtype/25-1.html"
+      },
+      {
+        "name": "日韩无码",
+        "url": "/vodtype/26-{{page}}.html",
+        "url2": "/vodtype/26-1.html"
+      },
+      {
+        "name": "日韩有码",
+        "url": "/vodtype/27-{{page}}.html",
+        "url2": "/vodtype/27-1.html"
+      },
+      {
+        "name": "中文字幕",
+        "url": "/vodtype/28-{{page}}.html",
+        "url2": "/vodtype/28-1.html"
+      },
+      {
+        "name": "欧美风情",
+        "url": "/vodtype/29-{{page}}.html",
+        "url2": "/vodtype/29-1.html"
+      },
+      {
+        "name": "经典伦理",
+        "url": "/vodtype/30-{{page}}.html",
+        "url2": "/vodtype/30-1.html"
+      },
+      {
+        "name": "卡通动漫",
+        "url": "/vodtype/31-{{page}}.html",
+        "url2": "/vodtype/31-1.html"
+      }
+    ],
+    "list": {
+      "list": "a.video-pic, a[class*='video-pic']",
+      "name": "title||img@alt||text",
+      "tips": "",
+      "coverUrl": "data-original||data-src||img@src||src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/s/{{key}}.html",
+      "list": "a.video-pic, a[class*='video-pic']",
+      "name": "title||img@alt||text",
+      "coverUrl": "data-original||data-src||img@src||src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],m=html.match(/const\\s+rawUrl\\s*=\\s*['\\\"]([^'\\\"]+)['\\\"]/);if(m)r.push({name:'正片',url:m[1]});return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],m=html.match(/const\\s+rawUrl\\s*=\\s*['\\\"]([^'\\\"]+)['\\\"]/);if(m)r.push({name:'正片',url:m[1]});return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_note": "镜像可能轮换；播放取页面 rawUrl 明文 m3u8"
+  },
+  {
+    "name": "📺zu45足控",
+    "api": "https://zu45.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Referer": "https://zu45.com/",
+      "Accept-Language": "zh-CN,zh;q=0.9"
+    },
+    "categories": [
+      {
+        "name": "最新",
+        "url": "/page/{{page}}/",
+        "url2": "/"
+      },
+      {
+        "name": "直播视频",
+        "url": "/zhiboshipin/page/{{page}}/",
+        "url2": "/zhiboshipin/"
+      },
+      {
+        "name": "艾彩系列",
+        "url": "/aicaixilie/page/{{page}}/",
+        "url2": "/aicaixilie/"
+      },
+      {
+        "name": "机构系列",
+        "url": "/jigou/page/{{page}}/",
+        "url2": "/jigou/"
+      },
+      {
+        "name": "绳艺精品",
+        "url": "/shengyijingpin/page/{{page}}/",
+        "url2": "/shengyijingpin/"
+      },
+      {
+        "name": "TK系列",
+        "url": "/tkxilie/page/{{page}}/",
+        "url2": "/tkxilie/"
+      },
+      {
+        "name": "网友原创",
+        "url": "/wangyouyuanchuang/page/{{page}}/",
+        "url2": "/wangyouyuanchuang/"
+      },
+      {
+        "name": "黄金",
+        "url": "/?s=%E9%BB%84%E9%87%91",
+        "url2": "/?s=%E9%BB%84%E9%87%91"
+      },
+      {
+        "name": "圣水",
+        "url": "/?s=%E5%9C%A3%E6%B0%B4",
+        "url2": "/?s=%E5%9C%A3%E6%B0%B4"
+      }
+    ],
+    "list": {
+      "list": "a[href*='/archives/']",
+      "name": "title||img@alt||text",
+      "tips": "",
+      "coverUrl": "data-bg||data-original||img@src||src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/?s={{key}}",
+      "list": "a[href*='/archives/']",
+      "name": "title||img@alt||text",
+      "coverUrl": "data-bg||img@src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "h1@text||title@text"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],m=html.match(/https?:\\/\\/[^\\\"'\\s]*meijao123\\.com\\/video\\/m3u8\\/[^\\\"'\\s]*\\/vod\\.gif/);if(m){var u=m[0].replace('/vod.gif','/index.m3u8');r.push({name:'正片',url:u});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],m=html.match(/https?:\\/\\/[^\\\"'\\s]*meijao123\\.com\\/video\\/m3u8\\/[^\\\"'\\s]*\\/vod\\.gif/);if(m){var u=m[0].replace('/vod.gif','/index.m3u8');r.push({name:'正片',url:u});}return r.length?JSON.stringify(r):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_note": "备用域名 www.zukong8.com；分块代理完整能力见 zu45.js"
+  },
+   {
+    "name": "📺EPORNER",
+    "api": "https://www.eporner.com",
+    "type": 2,
+    "searchable": true,
+    "removeReferer": false,
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+      "Referer": "https://www.eporner.com/",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    },
+    "categories": [
+      {
+        "name": "首页推荐",
+        "url": "/",
+        "url2": "/"
+      },
+      {
+        "name": "最佳视频",
+        "url": "/best-videos/{{page}}/",
+        "url2": "/best-videos/"
+      },
+      {
+        "name": "最高评分",
+        "url": "/top-rated/{{page}}/",
+        "url2": "/top-rated/"
+      },
+      {
+        "name": "4K",
+        "url": "/cat/4k-porn/{{page}}/",
+        "url2": "/cat/4k-porn/"
+      },
+      {
+        "name": "1080p",
+        "url": "/cat/hd-1080p/{{page}}/",
+        "url2": "/cat/hd-1080p/"
+      },
+      {
+        "name": "60FPS",
+        "url": "/cat/60fps/{{page}}/",
+        "url2": "/cat/60fps/"
+      },
+      {
+        "name": "VR",
+        "url": "/cat/vr-porn/{{page}}/",
+        "url2": "/cat/vr-porn/"
+      },
+      {
+        "name": "Amateur",
+        "url": "/cat/amateur/{{page}}/",
+        "url2": "/cat/amateur/"
+      },
+      {
+        "name": "Anal",
+        "url": "/cat/anal/{{page}}/",
+        "url2": "/cat/anal/"
+      },
+      {
+        "name": "Asian",
+        "url": "/cat/asian/{{page}}/",
+        "url2": "/cat/asian/"
+      },
+      {
+        "name": "Big Tits",
+        "url": "/cat/big-tits/{{page}}/",
+        "url2": "/cat/big-tits/"
+      },
+      {
+        "name": "Blonde",
+        "url": "/cat/blonde/{{page}}/",
+        "url2": "/cat/blonde/"
+      },
+      {
+        "name": "Lesbian",
+        "url": "/cat/lesbian/{{page}}/",
+        "url2": "/cat/lesbian/"
+      },
+      {
+        "name": "MILF",
+        "url": "/cat/milf/{{page}}/",
+        "url2": "/cat/milf/"
+      },
+      {
+        "name": "Teen",
+        "url": "/cat/teen/{{page}}/",
+        "url2": "/cat/teen/"
+      }
+    ],
+    "list": {
+      "list": "div.mb a[href*='/video-'], div.hdy a[href*='/video-'], a[href*='/video-']",
+      "name": "img@alt||title||text",
+      "tips": ".mvhdico span@text||.mbtim@text",
+      "coverUrl": "img@data-src||img@src||data-src||src",
+      "detailUrl": "href"
+    },
+    "search": {
+      "url": "/search/?search={{key}}",
+      "list": "div.mb a[href*='/video-'], a[href*='/video-']",
+      "name": "img@alt||title||text",
+      "tips": ".mvhdico span@text||.mbtim@text",
+      "coverUrl": "img@data-src||img@src||src",
+      "detailUrl": "href"
+    },
+    "detail": {
+      "meta": "title@text||h1@text||og:title"
+    },
+    "play": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re=/dload\\/([A-Za-z0-9]+)\\/(\\d+)\\/(\\d+)-(\\d+)p\\.mp4/g;while((m=re.exec(html))){var q=parseInt(m[4],10);if(s[q])continue;s[q]=1;var u='https://www.eporner.com/dload/'+m[1]+'/'+m[2]+'/'+m[3]+'-'+m[4]+'p.mp4';r.push({name:q+'p',url:u,q:q});}r.sort(function(a,b){return b.q-a.q;});return r.length?JSON.stringify(r.map(function(x){return{name:x.name,url:x.url};})):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "toc": {
+      "list": "body@js:function getPlay(html){var r=[],s={},m,re=/dload\\/([A-Za-z0-9]+)\\/(\\d+)\\/(\\d+)-(\\d+)p\\.mp4/g;while((m=re.exec(html))){var q=parseInt(m[4],10);if(s[q])continue;s[q]=1;var u='https://www.eporner.com/dload/'+m[1]+'/'+m[2]+'/'+m[3]+'-'+m[4]+'p.mp4';r.push({name:q+'p',url:u,q:q});}r.sort(function(a,b){return b.q-a.q;});return r.length?JSON.stringify(r.map(function(x){return{name:x.name,url:x.url};})):'[]';}getPlay(__result);",
+      "name": "$.name",
+      "url": "$.url"
+    },
+    "_js": "EPORNER.js",
+    "_note": "匿名最高约720p；更高画质需登录 Cookie，完整类别/女优两级见 EPORNER.js"
   }
 ]
